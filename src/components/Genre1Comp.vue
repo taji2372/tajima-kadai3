@@ -55,7 +55,10 @@ const deletePost = async () => {
   try {
     deleting.value = true
     const id = selectedPost.value.id
-    await axios.get('/api/DELETE', { params: { id } })
+    await axios.get(
+      'https://m3h-tajima-kadai3-containerapp.whiteisland-5e3c12d2.japaneast.azurecontainerapps.io/api/DELETE',
+      { params: { id } },
+    )
     dialog.value = false
     selectedPost.value = null
     await store.fetchSelect()
