@@ -62,9 +62,13 @@ export const usePostStore = defineStore('Post', {
           formData.append('thumbnail', postData.thumbnailFile)
         }
 
-        const res = await axios.post('/api/INSERT', formData, {
-          headers: { 'Content-Type': 'multipart/form-data' },
-        })
+        const res = await axios.post(
+          'https://m3h-tajima-kadai3-containerapp.whiteisland-5e3c12d2.japaneast.azurecontainerapps.io/api/INSERT',
+          formData,
+          {
+            headers: { 'Content-Type': 'multipart/form-data' },
+          },
+        )
 
         console.log('insertPost response', res.data)
         this.PostResult = res.data
