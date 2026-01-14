@@ -88,7 +88,10 @@ export const usePostStore = defineStore('Post', {
     async deletePost(id) {
       this.apiLoading = true
       try {
-        const res = await axios.get('/api/DELETE', { params: { id } })
+        const res = await axios.get(
+          'https://m3h-tajima-kadai3-containerapp.whiteisland-5e3c12d2.japaneast.azurecontainerapps.io/api/DELETE',
+          { params: { id } },
+        )
         await this.fetchSelect()
         return res.data
       } catch (err) {
